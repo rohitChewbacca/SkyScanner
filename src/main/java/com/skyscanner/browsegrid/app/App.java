@@ -1,5 +1,7 @@
 package com.skyscanner.browsegrid.app;
 
+import java.sql.Time;
+
 import com.skyscanner.browsegrid.service.SkyScnSchedService;
 
 /**
@@ -19,7 +21,10 @@ public class App
 //        	Long schdIntrv = Long.parseLong(args[0]);
 //        	SkyScnSchedService service = new SkyScnSchedService(schdIntrv);
         	SkyScnSchedService service = new SkyScnSchedService(10000l);
+        	Long startTime = System.currentTimeMillis();
         	service.start();
+        	Long endTime = System.currentTimeMillis();
+        	System.out.println("Time taken to execute the JOB :: "+new Time(endTime-startTime).toLocalTime());
         	}catch(NumberFormatException e){
         		System.out.println("Please Enter a Valid interval in milliseconds");
 //        	}

@@ -23,7 +23,7 @@ public class SkyScnSchedService {
 		trigger.setName("TimeIntervalTrigger");
 		trigger.setStartTime(new Date(System.currentTimeMillis() + 1000));
 		trigger.setRepeatInterval(schdIntrv);
-		trigger.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
+		trigger.setRepeatCount(0);
 	}
 
 	public void start() {
